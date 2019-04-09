@@ -11,7 +11,7 @@ module.exports = function(deployer) {
     const f = fs.openSync(fpath, 'w+')
 
     let data = ''
-    data += `const address = ${JSON.stringify(contract.address)}\n`
+    data += `const contractAddress = ${JSON.stringify(contract.address)}\n`
     data += `const abi = ${JSON.stringify(contract.abi)}\n\n`
     data += `export {address, abi}\n`
 
