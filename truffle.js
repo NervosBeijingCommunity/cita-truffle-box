@@ -17,7 +17,8 @@ module.exports = {
       host: '121.196.200.225', // your host
       port: 1337,
       network_id: '*',
-      privateKey: '0x688163347C8BDC907472E630EE67401797CF0B9CA0BFB9B6843AC41A0547679C',
+      privateKey: '0x6b411b89cd42cd8b6cf30f6059395ae5318aec1141d176ae93b306d7a98ddf38',
+      // fromAddr: '0x7b904a9B525CCB715d85d57daC34E72B180160c5'
       quota: 953000
     },
   },
