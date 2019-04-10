@@ -21,7 +21,7 @@ const Record = ({ time, text, hasYearLabel }) => {
   return (
     <div className="list__record--container">
       {hasYearLabel ? <div className="list__record--year">{_time.getFullYear()}</div> : null}
-      <span>{`${_time.getMonth() + 1}-${timeFormatter(_time.getDate())} ${timeFormatter(_time.getHours())}:${timeFormatter(_time.getMinutes())}`}</span>
+      <span>{`${timeFormatter(_time.getMonth() + 1)}-${timeFormatter(_time.getDate())} ${timeFormatter(_time.getHours())}:${timeFormatter(_time.getMinutes())}`}</span>
       <div>{text}</div>
     </div>
   )
@@ -123,7 +123,7 @@ class App extends React.Component {
         <div className="add__time--container">
           <span className="add__time--year">{time.getFullYear()}</span>
           :
-          <span className="add__time--month">{time.getMonth() + 1}</span>
+          <span className="add__time--month">{timeFormatter(time.getMonth() + 1)}</span>
           :
           <span className="add__time--day">{timeFormatter(time.getDate())}</span>
           :

@@ -1,6 +1,6 @@
 const config = {
   chain: 'https://node.cryptape.com',
-  privateKey: '0x770d4236db6fbd81cd3baf3cbdf56859fc7635515df0ea7a177d72073a38a7ac',
+  privateKey: '0x4781817aaf657ca195f0411fe51e4c61b9d4c584361742029408253d17ba290d',
 }
 
 module.exports = config
