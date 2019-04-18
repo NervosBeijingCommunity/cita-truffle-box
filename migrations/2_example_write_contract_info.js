@@ -1,23 +1,19 @@
 const fs = require('fs')
 const path = require('path')
-const HelloWorld = artifacts.require('HelloWorld')
+const FirstForever = artifacts.require('FirstForever')
 
 module.exports = function(deployer) {
-  deployer.deploy(HelloWorld, 'test', {  overwrite: false }).then((contract) => {
-    contract.methods
-      .sayHi()
-      .call()
-      .then((res) => console.log('call method sayHi:\n', res))
+  deployer.deploy(FirstForever, 'test', { overwrite: false }).then((contract) => {
 
-    const dirpath = path.resolve(process.cwd(), './deployed')
+    const dirpath = path.resolve(process.cwd(), './src/deployed')
     fs.existsSync(dirpath) || fs.mkdirSync(dirpath)
-    const fpath = path.resolve(dirpath, 'hellowroldDeployed.js')
+    const fpath = path.resolve(dirpath, 'firstForeverDeployed.js')
     const f = fs.openSync(fpath, 'w+')
 
     let data = ''
-    data += `const address = ${JSON.stringify(contract.address)}\n`
+    data += `const contractAddress = ${JSON.stringify(contract.address)}\n`
     data += `const abi = ${JSON.stringify(contract.abi)}\n\n`
-    data += `export {address, abi}\n`
+    data += `export {contractAddress, abi}\n`
 
     fs.writeFileSync(f, data)
   })
